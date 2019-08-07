@@ -1,24 +1,16 @@
 import React from 'react';
 import './App.css';
+import Header from "./components/Header/Header"
+import Selection from "./components/Selection/Selection"
+import GearDisplay from "./components/GearDisplay/GearDisplay"
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <p>Classic BIS List</p>
-       <a href="#" data-wowhead="item=2828"></a>
-      </header>
-      <section className="Class-selection">
-        <label>
-          Rogue
-          <input type="radio" value="Rogue" name="class"></input>
-        </label>
-        <label>
-          Druid
-          <input type="radio" value="Druid" name="class"></input>
-        </label>
-      </section>
+      <Header/>
+      <Selection/>
+      <GearDisplay/>
     </div>
   );
 }
