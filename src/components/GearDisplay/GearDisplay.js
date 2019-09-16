@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+import "./GearDisplay.css"
+import "../../wowhead/classData"
 import head from "../../images/UIheadslot.png"
 import neck from "../../images/UIneckslot.png"
 import shoulder from "../../images/UIshoulderslot.png"
@@ -13,31 +15,63 @@ import finger from "../../images/UIfingerslot.png"
 import trinket from "../../images/UItrinketslot.png"
 import mainhand from "../../images/UImainhandslot.png"
 import offhand from "../../images/UIoffhandslot.png"
+import classWork from "../../wowhead/classData";
+
+
 
 const GearDisplay = () => {
+  const [selectedClass, updateClass] = useState(null)
+  const [example, setExample] = useState(null)
+
+  console.log(example)
+  console.log(selectedClass)
+  let classChosen = {selectedClass}
+  console.log(classWork)
+  
+  if(selectedClass) {
+    console.log()
+  }
+
   return(
-    <div>
-      <div>
-        <img src={head}></img>
-        <img src={neck}></img>
-        <img src={shoulder}></img>
-        <img src={chest}></img>
-        <img src={back}></img>
-        <img src={wrist}></img>
-      </div>
-      <div>
-        <img src={glove}></img>
-        <img src={waist}></img>
-        <img src={legs}></img>
-        <img src={boots}></img>
-        <img src={finger}></img>
-        <img src={finger}></img>
-        <img src={trinket}></img>
-        <img src={trinket}></img>
-      </div>
-      <div>
-        <img src={mainhand}></img>
-        <img src={offhand}></img>
+    <div className="main-wrapper">
+      <button onClick={()=> updateClass("Warrior")}>Class</button>
+      <button onClick={() => setExample("Success")}>example</button>
+      
+      <div className="gear-icons">
+
+        {/* This is the left side section of the character/gear screen */}
+
+        <div className="left-gear">
+          <img src={head}></img>
+          <img src={neck}></img>
+          <img src={shoulder}></img>
+          <img src={chest}></img>
+          <img src={back}></img>
+          <img src={wrist}></img>
+        </div>
+
+        {/* This is the bottom section of the character/gear screen */}
+
+        <div className="bottom-gear">
+          <img src={mainhand}></img>
+          <img src={offhand}></img>
+        </div>
+        
+        {/* This is right side section of the character/gear screen */}
+
+        <div className="right-gear">
+          <img src={glove}></img>
+          <img src={waist}></img>
+          <img src={legs}></img>
+          <img src={boots}></img>
+          <img src={finger}></img>
+          <img src={finger}></img>
+          <img src={trinket}></img>
+          <img src={trinket}></img>
+        </div>
+
+  
+  
       </div>
   </div>
   )
